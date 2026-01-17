@@ -5,6 +5,12 @@ import json
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
+from src.pipeline import run_pipeline
+import sys
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(PROJECT_ROOT))
 
 import yaml
 
@@ -42,10 +48,10 @@ def main() -> None:
         "run_dir": str(run_dir),
     }
     (run_dir / "run_meta.json").write_text(json.dumps(meta, indent=2))
+    run_pipeline(cfg, run_dir)
 
     print(f"Run directory created: {run_dir}")
-    print("Next: implement pipeline steps that write artifacts into this folder.")
-
+    print(f"Run completed. See logs at: {run_dir / 'logs' / 'pipeline.log'}")
 
 if __name__ == "__main__":
     main()

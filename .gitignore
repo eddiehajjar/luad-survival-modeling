@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Conda / env
+.env
+.venv
+*.egg-info/
+
+# Data (never commit)
+data/
+!data/README.md
+
+# Artifacts / outputs
+artifacts/
+
+# OS / editor
+.DS_Store
+.vscode/

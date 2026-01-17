@@ -15,6 +15,7 @@ dependencies:
   - tqdm
   - jupyter
   - ipykernel
+  - requests
   - pip:
       - lifelines
       - rich

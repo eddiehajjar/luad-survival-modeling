@@ -4,8 +4,8 @@ project:
 
 data:
   cancer: TCGA-LUAD
+  cancer_short: LUAD
   endpoint: OS
-  raw_dir: data/raw
   processed_dir: data/processed
 
 splits:
